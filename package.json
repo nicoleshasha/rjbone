@@ -5,11 +5,8 @@
   "main": "index.js",
   "start": "node index.js",
   "scripts": {
-    "build-css": "stylus source/stylesheets/index.styl -o static/css",
-    "watch-css": "stylus source/stylesheets/index.styl -o static/css -w",
-    "clean": "rm -rf static/css && mkdir -p static/css",
-    "build": "npm run clean && npm run build-css",
-    "watch": "npm run clean && npm run watch-css & nodemon server -e js,jade"
+    "prestart": "npm install",
+    "start": "http-server -a localhost -p 8000 -c-1"
   },
   "repository": {
     "type": "git",
